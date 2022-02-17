@@ -1,29 +1,27 @@
-import React, { Suspense } from 'react';
-import logo from './logo.svg';
+import { Suspense } from 'react';
 import './App.css';
 import route from './router';
 import {
-  BrowserRouter as Router,
+  BrowserRouter,
   Routes,
   Route,
-  useRoutes,
 } from 'react-router-dom';
-const useRoute = () => {
-  return useRoutes(route);
-};
+
 function App() {
   return (
-    <Suspense fallback={<div>top</div>}>
+    <BrowserRouter>
+    <Suspense fallback={<div>Loading</div>}>
       <Routes>
-        {route.map((route, index) => (
+        {route.map((route, index) => 
           <Route
             key={index + route.path}
             path={route.path}
-            element={route.component}
+            element={<route.component/>}
           ></Route>
-        ))}
+        )}
       </Routes>
     </Suspense>
+    </BrowserRouter>
   );
 }
 

@@ -7,6 +7,7 @@ export interface IRouteBase {
   component?: any;
   // 302 跳转
   redirect?: string;
+  meta: IRouteMeta
 }
 export interface IRouteMeta {
   title: string;
@@ -17,18 +18,11 @@ export interface IRoute extends IRouteBase {
 }
 const routes: IRoute[] = [
   {
-    path: '/search',
-    component: React.lazy(() => import('../view/Search')),
-    // children: [
-    //   {
-    //     path: '/system/login',
-    //     component: React.lazy(() => import('../views/system/login')),
-    //     meta: {
-    //       title: '登录'
-    //     }
-    //   },
-
-    // ],
+    path: '/',
+    component: React.lazy(() => import('../pages/Home')),
+    meta: {
+      title: '首页',
+    },
   }
   
 ];
