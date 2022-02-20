@@ -1,0 +1,14 @@
+.product{
+    width: 50%;
+    height: auto;
+    margin: 0 auto;
+}
+.product-main {
+    display: flex;
+    flex-wrap: wrap;
+}
+.product-box {
+    width: 200px;
+    margin-bottom: 20px;
+    margin-right: 20px;
+}

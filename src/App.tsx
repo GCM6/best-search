@@ -10,7 +10,7 @@ import {
 function App() {
   return (
     <BrowserRouter>
-    <Suspense fallback={<div>Loading</div>}>
+    <Suspense fallback={<div></div>}>
       <Routes>
         {route.map((route, index) => 
           <Route
