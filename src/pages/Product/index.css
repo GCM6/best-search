@@ -1,14 +1,21 @@
 .product{
-    width: 50%;
     height: auto;
-    margin: 0 auto;
+    padding: 50px 20px;
+
 }
-.product-main {
-    display: flex;
-    flex-wrap: wrap;
-}
+
 .product-box {
     width: 200px;
     margin-bottom: 20px;
     margin-right: 20px;
+}
+.product-title {
+    font-size: 32px;
+    color: black;
+    text-align: left;
+}
+.product-text {
+    font-size: 24px;
+    color: #ccc;
+    text-align: left;
 }

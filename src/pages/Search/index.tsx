@@ -30,9 +30,8 @@ function Search(props: any) {
   const { callBack, type, searchPropVal } = props
   const [searchVal, setSearch] = useState(searchPropVal || '')
   const searchData = () => {
-    if(searchVal === '') return
-    console.log("actionSearch(searchVal)", store.getState().searchReducers.isLoading);
-    store.dispatch(actionSearch(searchVal)as any )
+    if (searchVal === '') return
+    store.dispatch(actionSearch(searchVal) as any)
     callBack(true, searchVal)
   }
   const keyUpEvent = (event: React.KeyboardEvent<HTMLInputElement>) => {
@@ -52,8 +51,9 @@ function Search(props: any) {
           value={searchVal}
           onKeyUp={keyUpEvent}
           onChange={handleChange}
+          placeholder='Search for new product in 961K stores'
         />
-        <Button className={classes.button} variant="outlined" color="inherit">
+        <Button onClick={searchData} className={classes.button} variant="outlined" color="inherit">
           <SearchIcon style={{ color: 'rgba(0, 0, 0, 0.54)' }} />
         </Button>
       </Box>

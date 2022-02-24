@@ -1,10 +1,8 @@
-import { setIsLoading } from '../searchSetState';
+import { setIsLoading, setSearchResult } from '../searchSetState';
 import { Dispatch } from 'redux';
 import axios from "axios";
 // 搜索请求
-const searchFetch = async (searchVal: string) => {
-    console.log('调搭配这');
-    
+const searchFetch = async (searchVal: string) => {    
     try {
         const params = {
             login_token: "INTERVIEW_SIMPLY2021",
@@ -24,6 +22,8 @@ export const actionSearch = (searchVal: string) => {
             const res = await searchFetch(searchVal);
             console.log('Search results: ', res);
             dispatch(setIsLoading(false));
+            dispatch<any>(setSearchResult({data: res?.data?.product_trends}));
+            return res
         } catch (error) {
             console.log(error);
             

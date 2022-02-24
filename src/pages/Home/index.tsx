@@ -11,7 +11,7 @@ function Home() {
     setIsSearch(status)
     setSearchPropVal(searchOldVal)
     console.log("状态", isHeaderSeacrh, searchOldVal);
-  }  
+  }
   return (
     <Box
       className='page'
@@ -20,7 +20,7 @@ function Home() {
         <Box className='logo' onClick={() => { toIndex(false, '') }}>
           <strong>Best</strong>
           <span>Search</span>
-          
+
         </Box>
         {
           isHeaderSeacrh && <Box className='search'><Search type='header' searchPropVal={searchPropVal} callBack={toIndex} /></Box>
@@ -38,8 +38,8 @@ function Home() {
         </Box>
       }
       {
-        searchPropVal && 
-      <Product />
+        searchPropVal &&
+        <Product />
       }
       <Box>
 
